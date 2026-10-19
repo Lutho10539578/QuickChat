@@ -2,15 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package quickchat;
+
+import java.util.Random;
 
 /**
  *
  * @author Lutho10539578
  */
-package quickchat;
-
-import java.util.Random;
-
 public class Message {
     private String messageID;
     private int numSent;
@@ -63,5 +62,16 @@ public class Message {
 
     public int returnTotalMessages() {
         return numSent;
+    }
+
+    // The storeMessage method is now correctly placed OUTSIDE of returnTotalMessages
+    public void storeMessage() {
+        com.google.gson.Gson gson = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
+        try (java.io.FileWriter writer = new java.io.FileWriter("messages.json", true)) {
+            gson.toJson(this, writer);
+            System.out.println("Message successfully stored");
+        } catch (java.io.IOException e) {
+            System.out.println("Error storing message: " + e.getMessage());
+        }
     }
 }
