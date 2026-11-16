@@ -19,7 +19,7 @@ import java.util.Arrays;
  * JSON reading/writing uses Gson.
  * Reference (Harvard - check your own format and add the date you accessed it):
  * Google (2023) Gson User Guide. Available at:
- * https://github.com/google/gson/blob/main/UserGuide.md (Accessed: <date>).
+ * https://github.com/google/gson/blob/main/UserGuide.md (Accessed: <16 November 2026>).
  */
 public class MessageManager {
 
